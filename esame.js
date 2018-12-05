@@ -57,19 +57,13 @@ exports.deleteById=function(id){
 
 //Cambiare lo stato di completed da false a true e viceversa
 
-exports.changeBool = function(id) { 
+exports.changeBool = function(id,param) { 
 	for (var i = 0; i <list.length; i++) {
         if(list[i].id===id){
-            if(list[i].assignedTo===true){
-                list[i].assignedTo=false;
-            }
-            else{
-                list[i].assignedTo===true;
-            }
+            list[i].completed=param;
+                
         }
     }
-
-    return list;
     
 }
 
@@ -87,5 +81,10 @@ exports.findCompleted=function(){
 
 
 this.addToDo("spolverare", "corridoio",true,"mamma");
+this.addToDo("spolverare", "corridoio",true,"papà");
 this.addToDo("spolverare", "corridoio",true,"caio");
 console.log(this.getList());
+this.changeBool(0,false);
+this.changeBool(1,false);
+console.log(this.getList());
+console.log(this.findListByAssigned("mamma"));

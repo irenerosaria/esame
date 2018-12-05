@@ -28,34 +28,31 @@ describe('testiamo il compito', function() {
         ex.addToDo("lavare", "corridoio",false,"papà");
         ex.addToDo("spolverare", "cucina",true,"mamma");
         var element={ 
-        	name: "spolverare",
-        	description: "cucina",
-        	completed: "true",
-        	assignedTo: "mamma",
-        	id:2
+        	name: "lavare",
+        	description: "corridoio",
+        	completed: false,
+        	assignedTo:"papà" ,
+        	id:1
     	}
-
-        assert.deepEqual(ex.findListByAssigned(2), element);
-
-		
-	}
+		assert.deepEqual(ex.findListByAssigned("papà")[0], element);
+	})
 it('testiamo il changeBool',function(){
 		ex.reset();
 		ex.addToDo("spolverare", "corridoio",true,"mamma");
         ex.addToDo("lavare", "corridoio",false,"papà");
-        ex.getList();
         assert.equal(ex.getList()[0].completed, true);
         assert.equal(ex.getList()[1].completed, false);
-        ex.changeBool();
-        assert.equal(ex.getList()[0].completed, false);
+        ex.changeBool(0,true);
+        ex.changeBool(1,true);
+        assert.equal(ex.getList()[0].completed, true);
         assert.equal(ex.getList()[1].completed, true);
-	}
+	})
 
 it('testiamo il findCompleted',function(){
 		ex.reset();
 		ex.addToDo("spolverare", "corridoio",true,"mamma");
         ex.addToDo("lavare", "corridoio",false,"papà");
         assert.equal(ex.findCompleted()[0].completed, true);
-    }
+    })
 
-}
+})
