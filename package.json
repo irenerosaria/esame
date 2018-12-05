@@ -1,0 +1,26 @@
+{
+  "name": "esame",
+  "version": "1.0.0",
+  "description": "\"# esame\"",
+  "main": "esame.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "irene <colonia-irene@hotmail.it>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenerosaria/esame.git"
+  },
+  "keywords": [
+    "esame"
+  ],
+  "bugs": {
+    "url": "https://github.com/irenerosaria/esame/issues"
+  },
+  "homepage": "https://github.com/irenerosaria/esame#readme"
+}
