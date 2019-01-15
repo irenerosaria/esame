@@ -6,8 +6,13 @@ describe('testiamo il compito', function() {
 		ex.reset();
 		assert.equal(ex.getList().length,0);
     })
-
-	 it("testiamo l'aggiunta di utenti e la funzione di eliminazione",function(){
+    it('testiamo findListById',function(){
+        ex.reset();
+        ex.addToDo("spolverare", "corridoio",true,"mamma");
+        ex.addToDo("lavare", "corridoio",false,"papà");
+        assert.equal(ex.findListById(0), ex.getList()[0]);
+    })
+	 it("testiamo addToDo e reset",function(){
         ex.reset();
         ex.addToDo("spolverare", "corridoio",true,"mamma");
         assert.equal(ex.getList().length, 1);
