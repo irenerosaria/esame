@@ -53,6 +53,16 @@ it('testiamo il changeBool',function(){
         assert.equal(ex.getList()[1].completed, true);
 	})
 
+it('testiamo il changeDescription',function(){
+        ex.reset();
+        ex.addToDo("spolverare", "corridoio",true,"mamma");
+        assert.equal(ex.getList()[0].description, "corridoio");
+        ex.changeDescription(0,"scale");
+        assert.equal(ex.getList()[0].description, "scale");
+       
+    })
+
+
 it('testiamo il findCompleted',function(){
 		ex.reset();
 		ex.addToDo("spolverare", "corridoio",true,"mamma");
