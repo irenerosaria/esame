@@ -1,9 +1,9 @@
 var list=[];
 var COUNTER=0;
-
+var people=["mamma","papà","zia","zio","nonna","nonno"];
 //Aggiungere un ToDo
 exports.addToDo=function (param1,param2,param3,param4) {
-    var people=["mamma","papà","zia","zio","nonna","nonno"];
+    
     var element={ 
         name: param1,
         description: param2,
@@ -28,7 +28,15 @@ exports.reset = function() {
     return list;
 }
 
-
+exports.findListById=function(id){
+    
+    for(var i of list) {
+        if(i.id === id) {
+            return i;
+        }
+    }
+    
+}
 
 
 
@@ -65,6 +73,7 @@ exports.changeBool = function(id,param) {
         }
     }
     
+    
 }
 
 //Leggere la lista dei Todo in base al fatto che siano completati o meno, indipendentemente dall'utente
@@ -80,11 +89,11 @@ exports.findCompleted=function(){
 }
 
 
-this.addToDo("spolverare", "corridoio",true,"mamma");
-this.addToDo("spolverare", "corridoio",true,"papà");
-this.addToDo("spolverare", "corridoio",true,"caio");
-console.log(this.getList());
-this.changeBool(0,false);
-this.changeBool(1,false);
-console.log(this.getList());
-console.log(this.findListByAssigned("mamma"));
+// this.addToDo("spolverare", "corridoio",true,"mamma");
+// this.addToDo("spolverare", "corridoio",true,"papà");
+// this.addToDo("spolverare", "corridoio",true,"caio");
+// console.log(this.getList());
+// this.changeBool(0,false);
+// this.changeBool(1,false);
+// console.log(this.getList());
+// console.log(this.findListByAssigned("mamma"));
