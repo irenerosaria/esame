@@ -73,7 +73,7 @@ exports.changeBool = function(id,param) {
         }
     }
     
-    
+    return list[i];
 }
 
 //Leggere la lista dei Todo in base al fatto che siano completati o meno, indipendentemente dall'utente
@@ -88,7 +88,18 @@ exports.findCompleted=function(){
    return Twe; 
 }
 
+//Cambiare lo stato di completed da false a true e viceversa
 
+exports.changeDescription = function(id,param) { 
+    for (var i = 0; i <list.length; i++) {
+        if(list[i].id===id){
+            list[i].description=param;
+                
+        }
+    }
+    
+    return list[i];
+}
 // this.addToDo("spolverare", "corridoio",true,"mamma");
 // this.addToDo("spolverare", "corridoio",true,"papà");
 // this.addToDo("spolverare", "corridoio",true,"caio");
