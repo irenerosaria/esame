@@ -29,13 +29,13 @@ exports.reset = function() {
 }
 
 exports.findListById=function(id){
-    
+    var Twe=[];
     for(var i of list) {
         if(i.id === id) {
-            return i;
+            Twe.push(i);
         }
     }
-    
+    return Twe;
 }
 
 
@@ -59,7 +59,7 @@ exports.deleteById=function(id){
 			list.splice(i,1);
 		}
 	}
-
+    return list;
 }
 
 
@@ -73,7 +73,7 @@ exports.changeBool = function(id,param) {
         }
     }
     
-    return list[i];
+    return list;
 }
 
 //Leggere la lista dei Todo in base al fatto che siano completati o meno, indipendentemente dall'utente
@@ -88,7 +88,7 @@ exports.findCompleted=function(){
    return Twe; 
 }
 
-//Cambiare lo stato di completed da false a true e viceversa
+//Cambiare la description
 
 exports.changeDescription = function(id,param) { 
     for (var i = 0; i <list.length; i++) {
@@ -98,7 +98,7 @@ exports.changeDescription = function(id,param) {
         }
     }
     
-    return list[i];
+    return list;
 }
 // this.addToDo("spolverare", "corridoio",true,"mamma");
 // this.addToDo("spolverare", "corridoio",true,"papà");
